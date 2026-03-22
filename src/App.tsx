@@ -493,7 +493,6 @@ function HeroSection() {
         </div>
 
         <p className="hero-tagline">Three decades of greatness</p>
-        <div className="hero-crown">👑</div>
       </div>
 
       <div className="scroll-indicator" onClick={() => document.getElementById('storybook')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -560,7 +559,7 @@ function StorybookSection() {
   return (
     <section className="storybook-section" id="storybook">
       <div className="fade-in-up">
-        <h2 className="section-title">The Birthday Times</h2>
+        <h2 className="section-title">The Story of Ovo</h2>
         <p className="section-subtitle">Flip through Ovo's special edition newspaper</p>
       </div>
 
@@ -616,6 +615,7 @@ function StorybookSection() {
           <button onClick={flipPrev}>&#9664; Previous</button>
           <button onClick={flipNext}>Next &#9654;</button>
         </div>
+        <p className="book-page-count">Swipe or click to flip pages</p>
       </div>
     </section>
   )
@@ -659,29 +659,29 @@ const wishItems: WishItem[] = [
     label: 'Birthday wishes from Tome' },
 
   // 6. Everyone else's messages
-  { type: 'note', author: 'Lola', color: '#fce4ec', rotation: -2,
+  { type: 'note', author: 'Lola', color: '#fce4ec', rotation: -1.1,
     message: `Happy Birthday Boss! I really appreciate you for not just being a boss, but for being a true leader who sets the pace. Your guidance, discipline, unwavering commitment to excellence and putting God at the center of all is enviable and inspiring.\n\nAs you celebrate today, I wish you greater wisdom, continued success, good health, and even bigger accomplishments ahead. May this new year bring you the kind of fulfillment and impact you consistently create for others.\n\nCheers to a fulfilling year` },
   { type: 'note', author: 'Ada', color: '#e8eaf6', rotation: 1.5,
     message: `Happy Birthday Sir!\n\nI just want to sincerely appreciate you, not just as a leader, but as someone who shows up with intention, discipline, and a strong sense of purpose.\n\nThank you for your guidance, your commitment to growth, and for the way you lead with both excellence and values. It's inspiring to see.\n\nI pray that this new chapter brings you even greater clarity, impact, and fulfillment. May your efforts yield outstanding results, and may you continue to grow in wisdom, strength, and favor.\n\nWishing you a remarkable year ahead.` },
   { type: 'note', author: 'Ayo / Ohi', color: '#e0f2f1', rotation: -1,
     message: `Happy birthday my brother! Big 30. I hope that this year is the best year of your life yet - And every year after is better. You're one of the more genuine and straightforward people I know, never change.\n\nLove always` },
-  { type: 'note', author: 'Babs', color: '#fff3e0', rotation: 2,
+  { type: 'note', author: 'Babs', color: '#fff3e0', rotation: 1.2,
     message: `Happy Birthday to a boss who leads with both wisdom and a God-fearing heart. Ovouke, your compassion makes this workplace better every day. I pray that God continues to bless you with joy and success, and that His greatness shines even more brightly through your life this year.` },
   { type: 'note', author: 'Philip', color: '#f3e5f5', rotation: -1.5,
     message: `Happy birthday, Senior Man.\n\nAs we celebrate you, I pray for more wisdom, strength, and more blessings. So shall it be in Jesus Christ name.\n\nHappy Birthday once again, Sir!` },
   { type: 'note', author: 'Amos', color: '#e8f5e9', rotation: 1,
     message: `Beloved Boss,\n\nOn this special occasion of your special day, I celebrate not just the gift of your life, but the extraordinary leadership, vision, and excellence you consistently embody.\n\nIt is both a privilege and a profound honor to have you as my boss and COO. Your strategic depth, unwavering discipline, and remarkable ability to lead with clarity and purpose have been truly inspiring.\n\nWorking under your leadership has been a defining part of my professional journey. I am sincerely grateful for the exposure, the standards you uphold, and the culture of excellence you drive.\n\nToday, I celebrate a leader of impact, a builder of systems, and a man of vision.\n\nHappy Birthday, Sire!\n\nWith utmost respect and appreciation` },
-  { type: 'note', author: 'Victoria', color: '#fce4ec', rotation: -2.5,
+  { type: 'note', author: 'Victoria', color: '#fce4ec', rotation: -0.8,
     message: `Happy birthday Ovo,\nJust want you to know on this special day, I really appreciate you and everything you do` },
   { type: 'note', author: 'Zee', color: '#e3f2fd', rotation: -1,
     message: `Happy Birthday my dearest boss Ovo, words aren't enough to describe what an amazing boss you are, how selfless you are, how you always put everyone first before yourself. Honestly I can write a whole book about you but let me keep this short.\n\nThank you for everything, for your care, your sacrifice, and for always looking out for me. Thank you for your prayers and guidance. God bless you and as you enter a new decade of your life today I pray God almighty answers all your utmost heart desires always amen.\n\nEnjoy your day to the fullest and have lots of fun.` },
-  { type: 'note', author: 'Chuka', color: '#f1f8e9', rotation: 2,
+  { type: 'note', author: 'Chuka', color: '#f1f8e9', rotation: 1.0,
     message: `Tovo!!!!! I know you don't recognize your birthday but that's why we recognize it for you, because it's not just a birthday, it's an acknowledgement of the things you've achieved and the things that you will. You've come so far and I'm proud to see the man that you're turning out to be.\n\nSo glad to have you as my friend, through our ups and downs, our long distance relationships, every moment has been a blessing. I just want to thank God for what he has done in your life and may he continue to guide you so that you use the light given to you for his purpose alone.\n\nAs we continue to grow in love and kindness may God give you the wisdom to navigate all challenges and decisions. Praying for nothing but love and prosperity for you and may today bring joy to your heart.\n\nLove you big time Broo have an amazing one!!!!` },
   { type: 'note', author: 'Jeff', color: '#e0f7fa', rotation: -1.5,
     message: `Happy Birthday, Ovuoke\n\nI just wanted to wish you a great day and take a moment to appreciate you. It's been quite a journey working together — we've put in a lot of effort and achieved some really solid results along the way, and I don't take that for granted.\n\nI know things are a bit tough right now, but the way you've handled everything with calm and direction says a lot. It gives me confidence that we'll get through this phase and come out better on the other side.\n\nYou've been a kind, thoughtful, and sharp leader, and it shows in how the team keeps moving forward. Wishing you more wins, good health, and a lot more success ahead.\n\nEnjoy your day` },
   { type: 'note', author: 'Seyi', color: '#ede7f6', rotation: 1,
     message: `Happy Birthday, Ovo. Wishing you a year filled with continued success, strong wins, and well-deserved moments of rest. Your leadership and clarity have been instrumental in guiding the team, and it's a privilege to work with you. I hope the year ahead brings even greater achievements and personal fulfillment.` },
-  { type: 'note', author: 'Chef Tilly', color: '#fff9c4', rotation: -2,
+  { type: 'note', author: 'Chef Tilly', color: '#fff9c4', rotation: -1.2,
     message: `Happy happy birthday Ovo!\nNever met anyone like you!\nThe kindest in every way! Praying this birthday exceeds your expectations!\nFar beyond what your heart can comprehend!\nHave the best day, best year, best time` },
 ]
 
@@ -806,6 +806,8 @@ function WishCard({ item }: { item: Extract<WishItem, { type: 'note' }> }) {
       style={{
         '--note-bg': item.color,
         '--note-rotation': `${item.rotation}deg`,
+        '--tape-offset': `${(item.author.length % 5) * 8 - 16}px`,
+        '--tape-rotation': `${(item.author.length % 3) * 5 - 5}deg`,
       } as React.CSSProperties}
     >
       <div className="wish-note-content">
@@ -841,6 +843,59 @@ function WishesSection() {
   )
 }
 
+// ===== Loading Screen =====
+function LoadingScreen() {
+  const [visible, setVisible] = useState(true)
+  const [fadeOut, setFadeOut] = useState(false)
+
+  useEffect(() => {
+    const fadeTimer = setTimeout(() => setFadeOut(true), 1800)
+    const hideTimer = setTimeout(() => setVisible(false), 2400)
+    return () => { clearTimeout(fadeTimer); clearTimeout(hideTimer) }
+  }, [])
+
+  if (!visible) return null
+
+  return (
+    <div className={`loading-screen ${fadeOut ? 'fade-out' : ''}`}>
+      <div className="loading-letters">
+        <span className="loading-letter" style={{ animationDelay: '0s' }}>O</span>
+        <span className="loading-letter" style={{ animationDelay: '0.2s' }}>{'\u00A0'}</span>
+        <span className="loading-letter" style={{ animationDelay: '0.4s' }}>V</span>
+        <span className="loading-letter" style={{ animationDelay: '0.6s' }}>{'\u00A0'}</span>
+        <span className="loading-letter" style={{ animationDelay: '0.8s' }}>O</span>
+      </div>
+      <p className="loading-subtitle">Turning 30</p>
+    </div>
+  )
+}
+
+// ===== Floating Nav =====
+function FloatingNav() {
+  const [hidden, setHidden] = useState(true)
+
+  useEffect(() => {
+    const hero = document.querySelector('.hero-section')
+    if (!hero) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHidden(entry.isIntersecting)
+      },
+      { threshold: 0.1 }
+    )
+    observer.observe(hero)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <nav className={`floating-nav ${hidden ? 'hidden' : ''}`}>
+      <a href="#storybook">Story</a>
+      <a href="#storybook">Newspaper</a>
+      <a href="#wishes">Wishes</a>
+    </nav>
+  )
+}
+
 // ===== Scroll Animation Hook =====
 function useScrollAnimation() {
   useEffect(() => {
@@ -855,7 +910,7 @@ function useScrollAnimation() {
       { threshold: 0.1 }
     )
 
-    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el))
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el))
     return () => observer.disconnect()
   }, [])
 }
@@ -866,13 +921,20 @@ function App() {
 
   return (
     <>
+      <LoadingScreen />
+      <FloatingNav />
       <HeroSection />
       <div className="section-divider" />
       <StorybookSection />
       <div className="section-divider-reverse" />
       <WishesSection />
       <footer className="footer">
-        <p>Made with <span className="heart">♥</span> for Ovuoke Buluku's 30th Birthday</p>
+        <div className="footer-content">
+          <p className="footer-name">Ovuoke Buluku</p>
+          <p className="footer-date">March 21, 2026</p>
+          <div className="footer-divider" />
+          <p className="footer-made">Made with <span className="heart">&#9829;</span> by friends and family</p>
+        </div>
       </footer>
     </>
   )
