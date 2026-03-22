@@ -57,7 +57,7 @@ function FrontPage() {
   )
 }
 
-// ===== Inside Page 1: Celebrate + Timeline =====
+// ===== Inside Page 1: Tribute + Celebrate =====
 function InsidePage1() {
   return (
     <div className="np-page np-inside">
@@ -75,28 +75,8 @@ function InsidePage1() {
           </div>
         </div>
         <div className="np-col">
-          <h3 className="np-col-title">BIRTHDAY TIMELINE</h3>
-          <div className="np-timeline">
-            <div className="np-timeline-item">
-              <div className="np-timeline-icon">🎉</div>
-              <span>ARRIVAL</span>
-            </div>
-            <div className="np-timeline-item">
-              <div className="np-timeline-icon">🎶</div>
-              <span>VIBES &amp; MUSIC</span>
-            </div>
-            <div className="np-timeline-item">
-              <div className="np-timeline-icon">🎮</div>
-              <span>GAMES &amp; FUN</span>
-            </div>
-            <div className="np-timeline-item">
-              <div className="np-timeline-icon">🎂</div>
-              <span>CUT THE CAKE</span>
-            </div>
-            <div className="np-timeline-item">
-              <div className="np-timeline-icon">📸</div>
-              <span>PHOTOSHOOT</span>
-            </div>
+          <div className="np-side-photo">
+            <img src={photos[8]} alt="Ovuoke" />
           </div>
           <div className="np-celebrate-box">
             <p className="np-script">Happy Birthday</p>
@@ -125,19 +105,9 @@ function InsidePage2() {
             <p><strong>Fashion Forward:</strong> Always dripped out. Ovo's style is legendary — he makes even casual outfits look like a magazine cover.</p>
             <p><strong>Loyal to the Core:</strong> The kind of friend who shows up at 2 AM with no questions asked. His loyalty knows no bounds.</p>
           </div>
-          <div className="np-box" style={{ marginTop: 12 }}>
-            <h4 className="np-box-title">BIRTHDAY PALETTE</h4>
-            <div className="np-palette">
-              <span className="np-swatch" style={{ background: '#1a0a2e' }} />
-              <span className="np-swatch" style={{ background: '#d4a853' }} />
-              <span className="np-swatch" style={{ background: '#f0d68a' }} />
-              <span className="np-swatch" style={{ background: '#e74c3c' }} />
-              <span className="np-swatch" style={{ background: '#000' }} />
-            </div>
-          </div>
         </div>
         <div className="np-col">
-          <div className="np-side-photo">
+          <div className="np-side-photo" style={{ height: 180 }}>
             <img src={photos[1]} alt="Ovuoke" />
           </div>
           <div className="np-box">
@@ -161,8 +131,37 @@ function InsidePage2() {
   )
 }
 
-// ===== Inside Page 3: Quiz + Word Search =====
-function InsidePage3() {
+// ===== Inside Page 3: Word Search (standalone) =====
+function WordSearchPage() {
+  return (
+    <div className="np-page np-inside">
+      <NpHeader />
+      <h2 className="np-section-headline">WORD SEARCH</h2>
+      <div className="np-rule-thin" />
+      <div className="np-ws-standalone">
+        <div className="np-ws-words-large">
+          <span>BIRTHDAY</span>
+          <span>FRIENDS</span>
+          <span>CELEBRATION</span>
+          <span>CAKE</span>
+          <span>JOY</span>
+          <span>LAUGHTER</span>
+          <span>THIRTY</span>
+          <span>OVUOKE</span>
+        </div>
+        <div className="np-ws-grid-large">
+          {'BIRTHDAYUGQXTUDPPRVLITJOUANRANKASITALPVBFRIENDSCBAQDOVYNAEPAWOIJOLLUYUQOTFBKLGYNFRIEDSAENHTMUSIGCDRZXBTIHBNKAEAMZJLSEEEETKLOGI TJORCELEBRATIONFLAUGRVBMBYJS'.split('').map((c, i) => (
+            <span key={i}>{c === ' ' ? '' : c}</span>
+          ))}
+        </div>
+        <p className="np-ws-hint">Find all the words hidden in the grid above!</p>
+      </div>
+    </div>
+  )
+}
+
+// ===== Inside Page 4: Quiz =====
+function QuizPage() {
   const quizQuestions = [
     "1. What is his childhood nickname?",
     "2. What is the most adventurous thing he has ever done?",
@@ -177,43 +176,18 @@ function InsidePage3() {
   ]
 
   return (
-    <div className="np-page np-inside np-quiz-page">
+    <div className="np-page np-inside">
       <NpHeader />
-      <div className="np-two-col">
-        <div className="np-col">
-          <div className="np-box" style={{ marginBottom: 12 }}>
-            <h4 className="np-box-title">WORD SEARCH</h4>
-            <div className="np-wordsearch">
-              <div className="np-ws-words">
-                <span>BIRTHDAY</span>
-                <span>PARTY</span>
-                <span>FRIENDS</span>
-                <span>CELEBRATION</span>
-                <span>CAKE</span>
-                <span>JOY</span>
-                <span>LAUGHTER</span>
-                <span>THIRTY</span>
-              </div>
-              <div className="np-ws-grid">
-                {'BIRTHDAYUGQXTUDPPRVLITJOUANRANKASITALPVBFRIENDSCBAQDOVYNAEPAWOIJOLLUYUQOTFBKLGYNFRIEDSAENHTMUSIGCDRZXBTIHBNKAEAMZJLSEEEETKLOGI TJORCELEBRATIONFLAUGRVBMBYJS'.split('').map((c, i) => (
-                  <span key={i}>{c === ' ' ? '' : c}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="np-col">
-          <h3 className="np-col-title" style={{ marginBottom: 4 }}>WHO KNOWS THE</h3>
-          <p className="np-script" style={{ fontSize: 20, margin: '0 0 8px' }}>birthday boy best?</p>
-          <div className="np-quiz">
-            {quizQuestions.map((q, i) => (
-              <p key={i} className="np-quiz-q">{q}</p>
-            ))}
-          </div>
-          <div className="np-score-box">
-            <p className="np-script">My score ____</p>
-          </div>
-        </div>
+      <h3 className="np-section-headline">WHO KNOWS THE</h3>
+      <p className="np-script" style={{ fontSize: 22, margin: '0 0 8px', textAlign: 'center' }}>birthday boy best?</p>
+      <div className="np-rule-thin" />
+      <div className="np-quiz-standalone">
+        {quizQuestions.map((q, i) => (
+          <p key={i} className="np-quiz-q">{q}</p>
+        ))}
+      </div>
+      <div className="np-score-box">
+        <p className="np-script">My score ____</p>
       </div>
     </div>
   )
@@ -597,7 +571,8 @@ function StorybookSection() {
             {/* Inside Pages */}
             <div className="np-page-wrapper"><InsidePage1 /></div>
             <div className="np-page-wrapper"><InsidePage2 /></div>
-            <div className="np-page-wrapper"><InsidePage3 /></div>
+            <div className="np-page-wrapper"><WordSearchPage /></div>
+            <div className="np-page-wrapper"><QuizPage /></div>
 
             {/* Photo Gallery Pages — all photos */}
             {photos.slice(1).map((photo, i) => (
@@ -661,6 +636,8 @@ const wishItems: WishItem[] = [
   // 6. Everyone else's messages
   { type: 'note', author: 'Lola', color: '#fce4ec', rotation: -1.1,
     message: `Happy Birthday Boss! I really appreciate you for not just being a boss, but for being a true leader who sets the pace. Your guidance, discipline, unwavering commitment to excellence and putting God at the center of all is enviable and inspiring.\n\nAs you celebrate today, I wish you greater wisdom, continued success, good health, and even bigger accomplishments ahead. May this new year bring you the kind of fulfillment and impact you consistently create for others.\n\nCheers to a fulfilling year` },
+  { type: 'note', author: 'Shola', color: '#e8eaf6', rotation: 0.8,
+    message: `Happy Birthday Ovo!\n\nWorking alongside you has been one of the most rewarding experiences of my career. Thank you for always being there not just as a leader, but as someone who genuinely invests in the people around him. You gave me the opportunity to learn, to grow, and to see what real leadership looks like up close.\n\nYour patience, your vision, and your willingness to guide others even when things get tough is rare, and I don't take it for granted. You've shaped so much of how I approach my own work, and I'm deeply grateful for that.\n\nHere's to 30 years of impact and many more to come. Wishing you everything you deserve and more.\n\nHappy Birthday, boss!` },
   { type: 'note', author: 'Ada', color: '#e8eaf6', rotation: 1.5,
     message: `Happy Birthday Sir!\n\nI just want to sincerely appreciate you, not just as a leader, but as someone who shows up with intention, discipline, and a strong sense of purpose.\n\nThank you for your guidance, your commitment to growth, and for the way you lead with both excellence and values. It's inspiring to see.\n\nI pray that this new chapter brings you even greater clarity, impact, and fulfillment. May your efforts yield outstanding results, and may you continue to grow in wisdom, strength, and favor.\n\nWishing you a remarkable year ahead.` },
   { type: 'note', author: 'Ayo / Ohi', color: '#e0f2f1', rotation: -1,
@@ -677,71 +654,37 @@ const wishItems: WishItem[] = [
     message: `Happy Birthday my dearest boss Ovo, words aren't enough to describe what an amazing boss you are, how selfless you are, how you always put everyone first before yourself. Honestly I can write a whole book about you but let me keep this short.\n\nThank you for everything, for your care, your sacrifice, and for always looking out for me. Thank you for your prayers and guidance. God bless you and as you enter a new decade of your life today I pray God almighty answers all your utmost heart desires always amen.\n\nEnjoy your day to the fullest and have lots of fun.` },
   { type: 'note', author: 'Chuka', color: '#f1f8e9', rotation: 1.0,
     message: `Tovo!!!!! I know you don't recognize your birthday but that's why we recognize it for you, because it's not just a birthday, it's an acknowledgement of the things you've achieved and the things that you will. You've come so far and I'm proud to see the man that you're turning out to be.\n\nSo glad to have you as my friend, through our ups and downs, our long distance relationships, every moment has been a blessing. I just want to thank God for what he has done in your life and may he continue to guide you so that you use the light given to you for his purpose alone.\n\nAs we continue to grow in love and kindness may God give you the wisdom to navigate all challenges and decisions. Praying for nothing but love and prosperity for you and may today bring joy to your heart.\n\nLove you big time Broo have an amazing one!!!!` },
+  { type: 'note', author: 'Chef Tilly', color: '#fff9c4', rotation: -1.2,
+    message: `Happy happy birthday Ovo!\nNever met anyone like you!\nThe kindest in every way! Praying this birthday exceeds your expectations!\nFar beyond what your heart can comprehend!\nHave the best day, best year, best time` },
   { type: 'note', author: 'Jeff', color: '#e0f7fa', rotation: -1.5,
     message: `Happy Birthday, Ovuoke\n\nI just wanted to wish you a great day and take a moment to appreciate you. It's been quite a journey working together — we've put in a lot of effort and achieved some really solid results along the way, and I don't take that for granted.\n\nI know things are a bit tough right now, but the way you've handled everything with calm and direction says a lot. It gives me confidence that we'll get through this phase and come out better on the other side.\n\nYou've been a kind, thoughtful, and sharp leader, and it shows in how the team keeps moving forward. Wishing you more wins, good health, and a lot more success ahead.\n\nEnjoy your day` },
   { type: 'note', author: 'Seyi', color: '#ede7f6', rotation: 1,
     message: `Happy Birthday, Ovo. Wishing you a year filled with continued success, strong wins, and well-deserved moments of rest. Your leadership and clarity have been instrumental in guiding the team, and it's a privilege to work with you. I hope the year ahead brings even greater achievements and personal fulfillment.` },
-  { type: 'note', author: 'Chef Tilly', color: '#fff9c4', rotation: -1.2,
-    message: `Happy happy birthday Ovo!\nNever met anyone like you!\nThe kindest in every way! Praying this birthday exceeds your expectations!\nFar beyond what your heart can comprehend!\nHave the best day, best year, best time` },
 ]
 
-// Video card — generates thumbnail from video, only plays on user click
+// Video card — always renders <video> for native thumbnail, plays on click
 function VideoCard({ item }: { item: Extract<WishItem, { type: 'video' }> }) {
-  const [playing, setPlaying] = useState(false)
-  const [thumbnail, setThumbnail] = useState<string | null>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [hasPlayed, setHasPlayed] = useState(false)
 
-  // Generate thumbnail by loading video metadata + seeking to 1s
+  // Pause if user scrolls away
   useEffect(() => {
-    const video = document.createElement('video')
-    video.crossOrigin = 'anonymous'
-    video.preload = 'metadata'
-    video.muted = true
-    video.playsInline = true
-    video.src = item.url
-
-    const handleSeeked = () => {
-      try {
-        const canvas = document.createElement('canvas')
-        canvas.width = video.videoWidth || 320
-        canvas.height = video.videoHeight || 568
-        const ctx = canvas.getContext('2d')
-        if (ctx) {
-          ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
-          setThumbnail(canvas.toDataURL('image/jpeg', 0.7))
-        }
-      } catch {
-        // CORS or other issue — just show the play button without thumbnail
-      }
-      video.remove()
-    }
-
-    video.addEventListener('seeked', handleSeeked, { once: true })
-    video.addEventListener('loadeddata', () => {
-      video.currentTime = 1
-    }, { once: true })
-
-    return () => {
-      video.removeEventListener('seeked', handleSeeked)
-      video.remove()
-    }
-  }, [item.url])
-
-  const handlePlay = () => {
-    setPlaying(true)
-  }
-
-  // Pause if user scrolls away (don't let videos play in background)
-  useEffect(() => {
-    if (!playing || !videoRef.current) return
+    if (!videoRef.current) return
     const vid = videoRef.current
     const observer = new IntersectionObserver(
-      ([entry]) => { if (!entry.isIntersecting) vid.pause() },
+      ([entry]) => { if (!entry.isIntersecting && !vid.paused) vid.pause() },
       { threshold: 0.3 }
     )
     observer.observe(vid)
     return () => observer.disconnect()
-  }, [playing])
+  }, [])
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      setHasPlayed(true)
+      videoRef.current.play()
+    }
+  }
 
   return (
     <div
@@ -749,21 +692,19 @@ function VideoCard({ item }: { item: Extract<WishItem, { type: 'video' }> }) {
       style={{ '--note-bg': item.color, '--note-rotation': `${item.rotation}deg` } as React.CSSProperties}
     >
       <div className="wish-video-wrapper">
-        {playing ? (
-          <video
-            ref={videoRef}
-            src={item.url}
-            controls
-            playsInline
-            preload="metadata"
-            className="wish-video"
-          />
-        ) : (
-          <button
-            className="wish-video-play"
-            onClick={handlePlay}
-            style={thumbnail ? { backgroundImage: `url(${thumbnail})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
-          >
+        {/* Always render video — browser shows first frame as thumbnail natively */}
+        <video
+          ref={videoRef}
+          src={`${item.url}#t=0.5`}
+          playsInline
+          muted={false}
+          preload="metadata"
+          controls={hasPlayed}
+          className="wish-video"
+        />
+        {/* Play overlay — only shown before first play */}
+        {!hasPlayed && (
+          <button className="wish-video-play-overlay" onClick={handlePlay}>
             <span className="play-icon">&#9654;</span>
             <span className="play-label">Play Video</span>
           </button>

@@ -1057,6 +1057,64 @@ body {
   font-size: 16px;
 }
 
+/* Standalone word search page */
+.np-ws-standalone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  overflow: hidden;
+}
+
+.np-ws-words-large {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 9px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.np-ws-grid-large {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  font-size: 9px;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  width: 100%;
+  max-width: 340px;
+}
+
+.np-ws-hint {
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  color: #888;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Standalone quiz page */
+.np-quiz-standalone {
+  flex: 1;
+  overflow: hidden;
+  padding: 0 12px;
+}
+
+.np-quiz-standalone .np-quiz-q {
+  font-size: 9px;
+  line-height: 1.4;
+  margin-bottom: 5px;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 5px;
+}
+
 /* ===== PHOTO GALLERY PAGE ===== */
 .np-photo-page {
   display: flex;
@@ -1280,7 +1338,7 @@ body {
   background: #000;
 }
 
-.wish-video-play {
+.wish-video-play-overlay {
   position: absolute;
   inset: 0;
   display: flex;
@@ -1288,16 +1346,15 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.4);
   border: none;
   cursor: pointer;
   transition: background 0.3s;
-  background-size: cover;
-  background-position: center;
+  z-index: 2;
 }
 
-.wish-video-play:hover {
-  background-color: rgba(0, 0, 0, 0.35);
+.wish-video-play-overlay:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .play-icon {
@@ -1317,7 +1374,7 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.wish-video-play:hover .play-icon {
+.wish-video-play-overlay:hover .play-icon {
   background: rgba(255, 255, 255, 0.3);
   border-color: white;
   transform: scale(1.1);
