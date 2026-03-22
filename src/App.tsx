@@ -29,7 +29,7 @@ const photos = [
 function NpHeader() {
   return (
     <div className="np-header">
-      <span className="np-date">MARCH 21ST 2026</span>
+      <span className="np-date">MARCH 22ND 2026</span>
       <span className="np-location">LAGOS, NIGERIA</span>
     </div>
   )
@@ -82,7 +82,7 @@ function InsidePage1() {
             <p className="np-script">Happy Birthday</p>
             <p className="np-script">Ovuoke</p>
             <p className="np-headline-bold" style={{ fontSize: 14 }}>TURNING 30</p>
-            <p className="np-date-big">03. 21. 2026</p>
+            <p className="np-date-big">03. 22. 2026</p>
           </div>
         </div>
       </div>
@@ -119,7 +119,7 @@ function InsidePage2() {
               </div>
               <div className="np-cal-grid">
                 {[...Array(31)].map((_, i) => (
-                  <span key={i} className={i + 1 === 21 ? 'np-cal-highlight' : ''}>{i + 1}</span>
+                  <span key={i} className={i + 1 === 22 ? 'np-cal-highlight' : ''}>{i + 1}</span>
                 ))}
               </div>
               <div className="np-cal-year">2026</div>
@@ -634,6 +634,8 @@ const wishItems: WishItem[] = [
     label: 'Birthday wishes from Tome' },
 
   // 6. Everyone else's messages
+  { type: 'note', author: 'Clara', color: '#f3e5f5', rotation: 0.9,
+    message: `Happy Birthday Ovo.\n\nWishing you a year defined by clarity, decisive wins, and undeniable progress. The way you lead, think, and execute sets a strong standard, and it's something I genuinely respect.\n\nI pray that God goes ahead of you this year, ordering your steps, granting you wisdom beyond human understanding, and surrounding you with favor that opens doors no effort alone could achieve. May you experience strength without burnout, clarity without confusion, and results that exceed even your expectations.\n\nGrateful to work with you and even more to call you a friend.\n\nHave a truly great year.` },
   { type: 'note', author: 'Lola', color: '#fce4ec', rotation: -1.1,
     message: `Happy Birthday Boss! I really appreciate you for not just being a boss, but for being a true leader who sets the pace. Your guidance, discipline, unwavering commitment to excellence and putting God at the center of all is enviable and inspiring.\n\nAs you celebrate today, I wish you greater wisdom, continued success, good health, and even bigger accomplishments ahead. May this new year bring you the kind of fulfillment and impact you consistently create for others.\n\nCheers to a fulfilling year` },
   { type: 'note', author: 'Shola', color: '#e8eaf6', rotation: 0.8,
@@ -872,7 +874,7 @@ function App() {
       <footer className="footer">
         <div className="footer-content">
           <p className="footer-name">Ovuoke Buluku</p>
-          <p className="footer-date">March 21, 2026</p>
+          <p className="footer-date">March 22, 2026</p>
           <div className="footer-divider" />
           <p className="footer-made">Made with <span className="heart">&#9829;</span> by friends and family</p>
         </div>
